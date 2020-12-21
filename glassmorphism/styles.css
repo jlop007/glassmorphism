@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.blurred-wrapper{
+    height: 100vh;
+    background: url("./images/wallpaper.jpg") center/cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    animation: hue 10s infinite alternate;
+}
+
+.blurred-wrapper::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(2rem);
+    z-index: -1;
+    transform: scale(1.15);
+}
+
+
+@keyframes hue {
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+.main-header{
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo{
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 2.5rem;
+}
+
+.sign-up{
+    color: #fff;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    height: calc(100% - 12rem);
+}
+
+.content-wrapper{
+    max-width: 40rem;
+    transform: translateY(-4rem);
+}
+
+.tagline{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.message{
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+}
+
+.cta{
+    background-color: #000;
+    color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+
+    .btn{
+        padding: 1.5rem 3rem;
+    }
+
+    .content-wrapper{
+        max-width: 60rem;
+    }
+
+    .tagline{
+        font-size: 1.6rem;
+    }
+
+    .title{
+        font-size: 6rem;
+    }
+
+    .message{
+        font-size: 2rem;
+    }
+}
